@@ -1,8 +1,8 @@
 import { ThreeDots } from "react-loader-spinner";
-const Loader = ({ status }) => {
+const Loader = () => {
   return (
     <ThreeDots
-      visible={status}
+      visible={true}
       height="90"
       width="90"
       color="#1518cc"

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { FetchImages } from "../App/App.types";
 
 const createApi = axios.create({
   baseURL: "https://api.unsplash.com/",
@@ -7,7 +8,7 @@ const createApi = axios.create({
   },
 });
 
-export default async function fetchImagesWithQuery(query, page) {
+export default async function fetchImagesWithQuery(query:string, page: number): Promise<FetchImages> {
   const params = {
     query,
     page,
@@ -15,6 +16,7 @@ export default async function fetchImagesWithQuery(query, page) {
     orientation: "landscape",
   };
 
-  const response = await createApi.get("search/photos", { params });
-  return response.data.results;
+  const { data } = await createApi.get<FetchImages>("search/photos", { params });
+  return data;
 }
+
