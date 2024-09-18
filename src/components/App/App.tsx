@@ -10,8 +10,6 @@ import ImageModal from "../ImageModal/ImageModal";
 import {Image } from "./App.types";
 import toast, { Toaster } from "react-hot-toast";
 
-// import Modal from "react-modal";
-
 const App : React.FC=()=> {
   const [showGalleryImages, setShowGalleryImages] = useState<Image[]>([]);
   const [loading, setLoading] = useState<boolean>(false);

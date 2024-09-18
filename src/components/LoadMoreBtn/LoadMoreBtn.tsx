@@ -1,5 +1,6 @@
 import { FC } from "react";
 import css from "./LoadMoreBtn.module.css";
+
 interface LoadMoreProps {
   incrementPage: () => void;
   currentPage: boolean;
