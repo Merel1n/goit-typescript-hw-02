@@ -53,8 +53,6 @@ const App : React.FC=()=> {
     }
     asyncWraper();
   }, [query, page]);
-console.log(showGalleryImages);
-console.log(page);
 
   const onSearch = (query:string): void => {
     setQuery(query);
