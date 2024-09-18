@@ -37,13 +37,6 @@ interface ImagesModalProps {
   modalImage: Image | null;
 }
 const ImageModal: FC<ImagesModalProps> = ({ closeModal, modalIsOpen, modalImage }) => {
-  useEffect(() => {
-    document.body.style.overflowY = "hidden";
-    return () => {
-      document.body.style.removeProperty("overflow-y");
-    };
-  }, []);
-  console.log(modalImage);
   
   return (
     <Modal
