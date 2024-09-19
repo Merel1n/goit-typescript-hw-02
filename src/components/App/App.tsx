@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import fetchImagesWithQuery from "../js/searchImagesApi";
+import fetchImagesWithQuery from "../services/searchImagesApi";
 import SearchBar from "../SearchBar/SearchBar";
 import Loader from "../Loader/Loader";
 import ImageGallery from "../ImageGallery/ImageGallery";
@@ -81,12 +81,12 @@ const App : React.FC=()=> {
       {showGalleryImages.length > 0 && (
         <LoadMoreBtn incrementPage={showMore} currentPage={currentPage} />
       )}
-       {error && <ErrorMessage />}
+      {error && <ErrorMessage />}
       {loading && <Loader />}
         <ImageModal
           closeModal={closeModal}
-        modalIsOpen={modalIsOpen}
-        modalImage={modalState}
+          modalIsOpen={modalIsOpen}
+          modalImage={modalState}
          />
       <Toaster position="top-right" />
     </>
